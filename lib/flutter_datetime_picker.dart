@@ -395,6 +395,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
   Widget _renderItemView(DatePickerTheme theme) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 50),
       color: theme.backgroundColor ?? Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

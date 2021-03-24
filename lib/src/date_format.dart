@@ -7,6 +7,10 @@ import 'i18n_model.dart';
 ///     // => Today
 const String ymdw = 'ymdw';
 
+/// Example:
+///     formatDate(new DateTime(2018,8,31), [md]);
+const String md = 'md';
+
 ///
 /// Example:
 ///     formatDate(new DateTime(1989), [yyyy]);
@@ -268,6 +272,28 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
       } else {
         return formatDate(date, [D, ' ', M, ' ', dd, ', ', yyyy], locale);
       }
+    }
+  }
+
+  if (formats.first == md) {
+    if (locale == LocaleType.zh) {
+      return formatDate(date, [mm, '月', dd, '日 '], locale);
+    } else if (locale == LocaleType.nl) {
+      return formatDate(date, [dd, ' ', M], locale);
+    } else if (locale == LocaleType.ko) {
+      return formatDate(date, [mm, '월', dd, '일 '], locale);
+    } else if (locale == LocaleType.de) {
+      return formatDate(date, [dd, '. ', M], locale);
+    } else if (locale == LocaleType.id) {
+      return formatDate(date, [dd, ' ', M], locale);
+    } else if (locale == LocaleType.jp) {
+      return formatDate(date, [mm, '月', dd, '日'], locale);
+    } else if (locale == LocaleType.si) {
+      return formatDate(date, [dd, '. ', M, '. '], locale);
+    } else if (locale == LocaleType.gr) {
+      return formatDate(date, [dd, ' ', M, ' '], locale);
+    } else {
+      return formatDate(date, [M, ' ', dd], locale);
     }
   }
 

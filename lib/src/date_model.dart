@@ -585,7 +585,9 @@ class DateTimePickerModel extends CommonPickerModel {
     } else if (maxTime != null && time.isAfter(maxTime) && !isAtSameDay(maxTime, time)) {
       return null;
     }
-    return formatDate(time, [ymdw], locale);
+    // 修改时间格式
+    // return formatDate(time, [ymdw], locale);
+    return formatDate(time, [md], locale);
   }
 
   @override
